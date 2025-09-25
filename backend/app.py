@@ -78,15 +78,7 @@ def predict():
         pred_enc = model.predict(features)[0]
         pred_label = le_sleep_disorder.inverse_transform([pred_enc])[0]
 
-        disorder_descriptions = {
-            "No disorder": "You have a healthy sleep pattern.",
-            "Sleep apnea": "Sleep Apnea is a serious disorder where breathing repeatedly stops during sleep.",
-            "Insomnia": "Insomnia is difficulty falling or staying asleep."
-        }
-
-        description = disorder_descriptions.get(pred_label, "Description not available.")
-
-        return jsonify({"result": pred_label, "description": description})
+        return jsonify({"result": pred_label})
 
     except Exception as e:
         return jsonify({"error": str(e)}), 400

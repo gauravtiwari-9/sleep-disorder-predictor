@@ -131,12 +131,6 @@ const handleSubmission = (e) => {
                 alert("Error: " + data.error);
                 updateResult("-");
             } else {
-                if (data.description) {
-                    if (!disorderInfo[data.result.toLowerCase()]) {
-                        disorderInfo[data.result.toLowerCase()] = {};
-                    }
-                    disorderInfo[data.result.toLowerCase()].description = data.description;
-                }
                 updateResult(data.result);
             }
         })
