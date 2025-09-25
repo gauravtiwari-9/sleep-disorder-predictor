@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Disorder</title>
+
+    <link rel="stylesheet" href="../static/styles/base.css">
+    <link rel="stylesheet" href="../static/styles/header.css">
+    <link rel="stylesheet" href="../static/styles/prediction.css">
+    <link rel="stylesheet" href="../static/styles/analysis.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>Sleep Disorder Prediction System</h1>
+        <h3>A Machine-Learning Model to predict sleep disorders based on your input</h3>
+    </header>
+
+    <main class="main">
+        <div class="prediction">
+            <h2>Prediction</h2>
+
+
+            <div class="prediction-container">
+                <div class="form">
+                    <h3>Input Features</h3>
+
+                    <form id="prediction-form">
+                        <div class="occupation-box occupation-container">
+                            <label for="occupation">Occupation</label>
+                            <select name="occupation" id="occupation" required></select>
+                        </div>
+
+                        <div class="container age_gender_container">
+                            <div class="box age">
+                                <label for="age">Age</label>
+                                <input type="number" id="age" name="age" placeholder="Age" required>
+                            </div>
+
+                            <div class="box gender">
+                                <label for="gender">Gender</label>
+                                <select name="gender" id="gender" required></select>
+                            </div>
+                        </div>
+
+                        <div class="container sleep-container">
+                            <div class="box sleep-duration">
+                                <label for="sleep-duration">Sleep Duration</label>
+                                <input type="number" id="sleep-duration" name="sleep-duration"
+                                    placeholder="Sleep duration (hours)" required>
+                            </div>
+
+                            <div class="box sleep-quality">
+                                <label for="sleep-quality">Sleep Quality</label>
+                                <input type="number" id="sleep-quality" name="sleep-quality"
+                                    placeholder="Sleep Quality (1-10)" required>
+                            </div>
+                        </div>
+
+                        <div class="container physical-container">
+                            <div class="box activity-level">
+                                <label for="physical-activity-level">Physical Activity Level</label>
+                                <input type="number" id="physical-activity-level" name="physical-activity-level"
+                                    placeholder="Activity level (1-10)" required>
+                            </div>
+
+                            <div class="box daily-steps">
+                                <label for="daily-steps">Daily Steps</label>
+                                <input type="number" id="daily-steps" name="daily-steps" placeholder="Enter Steps"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="container stress-bmi-container">
+                            <div class="box stress-level">
+                                <label for="stress-level">Stress Level</label>
+                                <input type="number" id="stress-level" name="stress-level"
+                                    placeholder="Stress level (1-10)" required>
+                            </div>
+
+                            <div class="box bmi">
+                                <label for="bmi">BMI Category</label>
+                                <select name="bmi" id="bmi" required></select>
+                            </div>
+                        </div>
+
+                        <div class="container heart-container">
+                            <div class="box heart-rate">
+                                <label for="heart-rate">Heart Rate</label>
+                                <input type="number" id="heart-rate" name="heart-rate" placeholder="Heart Rate (bpm)"
+                                    required>
+                            </div>
+
+                            <div class="box bp">
+                                <label for="bp">Blood Pressure</label>
+                                <input type="text" id="bp" name="bp" placeholder="Blood Pressure (eg. 126/83)" required>
+                            </div>
+                        </div>
+
+                        <div class="submit">
+                            <button type="submit">Predict</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="result">
+                    <h3>Result</h3>
+
+                    <div class="result-box" id="disorder">
+                        <h4>No disorder</h4>
+                    </div>
+
+                    <div class="result-box" id="description">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="analysis">
+            <h2>Analysis</h2>
+
+            <div class="analysis-container">
+                <div class="dataset">
+                    <h3 id="dataset-title">Dataset</h3>
+                    <div class="dataset-description">
+                        <h3 id="datasetName">Dataset Name</h3>
+                        <p id="datasetDesc"></p>
+                    </div>
+                    <div class="large-diagram">
+                        <h4 id="dataset-graph-name">Chart</h4>
+                        <div id="dataset-img">
+                            <img src="" alt="Chart" class="popup-trigger">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="model">
+                    <h3>The Model</h3>
+                    <h3 id="model-name">Model Name</h3>
+                    <div class="model-box" id="metrics-visualize">
+                        <h4 id="model-graph-name">Chart</h4>
+                        <div id="model-img">
+                            <img src="" alt="Chart" class="popup-trigger">
+                        </div>
+                    </div>
+                    <div class="model-box" id="metrics">
+                        <h4>Evaluation Metrics</h4>
+                        <p id="metrics-desc"></p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Popup overlay -->
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <img src="" alt="Large View" class="popup-image" id="popup-image">
+        </div>
+    </div>
+
+
+    <script src="../static/scripts/prediction.js"></script>
+    <script src="../static/scripts/analysis.js"></script>
+    <script src="../static/scripts/overlay.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: #999DA5;
+}
+
+header {
+    height: 12%;
+    width: 98%;
+    padding: 0.5%;
+    text-align: center;
+}
+
+main {
+    border-radius: 15px;
+    height: 83%;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #626D79;
+    box-shadow: 5px 5px 24px rgba(0, 0, 0, 0.1);
+    padding: 1%;
+}
+
+
+
+
+
+
+
+
+
+
+/* Overlay styling */
+.overlay {                /* For background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);         /* Semi-transparent background */
+  display: none;                                  /* Initially hidden */
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(10px);                    /* Blurring effect on the background */
+}
+
+.popup {                  /* Popup container for large image */
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.popup-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* Close button (X) */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 5px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
